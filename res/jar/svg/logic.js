@@ -8,6 +8,9 @@ function loadSVG() {
     efBoxes = getElementsByClassName('box', document.getElementsByTagName('g'));
     eSvg = document.getElementById('svg');
     expandAll();
+    efBoxes.forEach(function (item) {
+        item.addEventListener('click', copyName);
+    });
 }
 
 ////////// getElementsByClassName(string, nodeList)
@@ -238,6 +241,24 @@ function yTrans(eBox) {
 ////////// setYTrans(element, number)
 function setYTrans(eBox, nValue) {
     eBox.setAttribute('transform', 'translate('+xTrans(eBox)+','+nValue+')');
+}
+
+function copyName(event) {
+    if (event.target.tagName != 'use') {
+        if (event.target.tagName == 'text' && event.target.classList.contains('name')) {
+            info = event.target.textContent;
+        }
+        var info = 'id: ' + this.id + '\n';
+        var texts = Array.from(this.getElementsByTagName('text'));
+        texts.forEach(function (text) {
+            info += text.textContent + '\n';
+        });
+        let nameEl = this.getElementsByClassName('name');
+        if (nameEl && nameEl.length === 1) {
+            navigator.clipboard.writeText(nameEl[0].textContent);
+        }
+        console.log(info);
+    }
 }
 
 ]]></script>

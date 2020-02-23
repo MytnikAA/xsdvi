@@ -161,7 +161,7 @@ public class SymbolElement extends AbstractSymbol{
 			print("<text class='hidden' visibility='hidden' x='5' y='41'>abstract: "+(abstr ? "1" : "0")+"</text>");
 		}
 		if (name!=null) {
-			print("<text class='strong' x='5' y='27'>"+name+"</text>");
+			print("<text class='strong name' x='5' y='27'>"+name+"</text>");
 		}
 		if (type!=null) {
 			print("<text class='visible' x='5' y='41'>"+type+"</text>");
@@ -194,7 +194,7 @@ public class SymbolElement extends AbstractSymbol{
 			print("<text class='visible' x='5' y='41'>abstract: "+(abstr ? "1" : "0")+"</text>");
 		}
 		if (name!=null) {
-			print("<text class='strong' x='5' y='27'>"+name+"</text>");
+			print("<text class='strong name' x='5' y='27'>"+name+"</text>");
 		}
 		if (type!=null) {
 			print("<text class='hidden' visibility='hidden' x='5' y='41'>"+type+"</text>");
