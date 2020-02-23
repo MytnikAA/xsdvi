@@ -46,6 +46,7 @@
         <copy todir="${distribution.dir}/${library.dir}">
             <fileset dir="${library.dir}"/>
         </copy>
+        <copydir src="${resources.dir}/jar" dest="${build.dir}" />
         <echo file="${distribution.dir}/${examples.dir}.bat">
 java -jar ${library.dir}/${name}.jar ${examples.dir}/xsd/ipo.xsd ${examples.dir}/xsd/skupina.xsd ${examples.dir}/xsd/mix.xsd ${examples.dir}/xsd/faktura.xsd -generateStyle ${name}.css
         </echo>
